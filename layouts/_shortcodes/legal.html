@@ -1,0 +1,11 @@
+{{- /* {{< legal "name" >}} – a value from params.legal, or a visible placeholder.
+   Empty values log a warning so the production build (--panicOnWarning)
+   can't publish placeholders. */ -}}
+{{- $key := .Get 0 -}}
+{{- $value := index (site.Params.legal | default dict) $key -}}
+{{- if $value -}}
+  {{- if eq $key "email" -}}<a href="mailto:{{ $value }}">{{ $value }}</a>{{- else -}}{{ $value }}{{- end -}}
+{{- else -}}
+  {{- warnf "legal: params.legal.%s is empty (%s)" $key .Page.File.Path -}}
+  <mark class="todo">[{{ T "todo" }}: {{ T (printf "legal_%s" $key) }}]</mark>
+{{- end -}}

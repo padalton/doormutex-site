@@ -9,6 +9,6 @@ SPDX-License-Identifier = "Apache-2.0"
 
 # Content: texts and images.
 [[annotations]]
-path = ["**/*.md", "content/**", "i18n/**", "static/images/**"]
+path = ["**/*.md", "content/**", "i18n/**", "assets/images/**", "docs/**"]
 SPDX-FileCopyrightText = "2026 The doormutex contributors"
 SPDX-License-Identifier = "CC-BY-SA-4.0"

@@ -1,0 +1,137 @@
+/* doormutex website – colours from the hub's web UI. */
+:root {
+  --bg: #f4f4f6; --fg: #1b1d22; --card: #fff; --muted: #5d616a; --line: #d9dbe0; --link: #0b5cad;
+  --red: #e5322d; --yellow: #f5b301; --green: #1fa84f; --housing: #24262c; --visor: #17181c;
+  --radius: 1rem;
+  color-scheme: light dark;
+}
+@media (prefers-color-scheme: dark) {
+  :root { --bg: #121317; --fg: #e9eaee; --card: #1d1f25; --muted: #a2a6b0; --line: #30333b; --link: #8cc2ff; --housing: #2b2e35; }
+}
+*, *::before, *::after { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; text-size-adjust: 100%; }
+body {
+  margin: 0; background: var(--bg); color: var(--fg);
+  font: 1.0625rem/1.6 system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  display: flex; flex-direction: column; min-height: 100vh;
+}
+main { flex: 1; }
+a { color: var(--link); text-underline-offset: .15em; }
+a:hover { text-decoration-thickness: 2px; }
+:focus-visible { outline: 3px solid var(--yellow); outline-offset: 2px; border-radius: .2rem; }
+img { max-width: 100%; height: auto; }
+.wrap { width: 100%; max-width: 64rem; margin: 0 auto; padding: 0 1rem; }
+.skip { position: absolute; left: -100vw; top: .5rem; background: var(--card); padding: .5rem 1rem; z-index: 10; }
+.skip:focus { left: .5rem; }
+
+/* Header */
+.site-header { border-bottom: 1px solid var(--line); background: var(--card); }
+.bar { display: flex; flex-wrap: wrap; align-items: center; gap: .5rem 1.25rem; padding-top: .6rem; padding-bottom: .6rem; }
+.brand { display: inline-flex; align-items: center; gap: .55rem; color: inherit; text-decoration: none; font-weight: 700; font-size: 1.15rem; letter-spacing: .01em; margin-right: auto; }
+.site-header nav { order: 3; width: 100%; }
+.site-header ul { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: .25rem 1rem; }
+.site-header nav a, .languages a { color: inherit; text-decoration: none; padding: .35rem 0; display: inline-block; }
+.site-header nav a[aria-current="page"] { font-weight: 700; box-shadow: inset 0 -3px 0 var(--red); }
+.site-header nav a:hover, .languages a:hover { text-decoration: underline; }
+.languages a { color: var(--muted); font-size: .95rem; }
+@media (min-width: 48rem) {
+  .site-header nav { order: 0; width: auto; }
+}
+
+/* Traffic light */
+.light {
+  --size: 1rem;
+  display: inline-grid; gap: calc(var(--size) * .35); padding: calc(var(--size) * .4);
+  background: var(--housing); border-radius: calc(var(--size) * .55); flex: none;
+}
+.lamp { width: var(--size); height: var(--size); border-radius: 50%; opacity: .16; }
+.lamp.red { background: var(--red); color: var(--red); }
+.lamp.yellow { background: var(--yellow); color: var(--yellow); }
+.lamp.green { background: var(--green); color: var(--green); }
+.light-red .red, .light-yellow .yellow, .light-green .green { opacity: 1; box-shadow: 0 0 calc(var(--size) * .6) currentColor; }
+.light.mini { --size: .42rem; }
+.light.big {
+  --size: clamp(3.2rem, 14vw, 4.6rem);
+  gap: calc(var(--size) * .3); padding: calc(var(--size) * .3) calc(var(--size) * .32);
+  box-shadow: 0 1.2rem 2.5rem -1.2rem rgba(0, 0, 0, .45);
+}
+.light.big .lamp { box-shadow: inset 0 0 0 calc(var(--size) * .07) var(--visor), 0 0 calc(var(--size) * .5) currentColor; }
+
+/* The hero light runs through the phases (16 s): green, last call (green
+   blinks four times), yellow, red, ending soon (red + yellow), green. */
+.light-cycle .lamp { animation: 16s infinite step-end; }
+.light-cycle .red { animation-name: cycle-red; }
+.light-cycle .yellow { animation-name: cycle-yellow; }
+.light-cycle .green { animation-name: cycle-green; }
+@keyframes cycle-green {
+  0% { opacity: 1; } 34% { opacity: .16; } 36% { opacity: 1; } 38% { opacity: .16; } 40% { opacity: 1; }
+  42% { opacity: .16; } 44% { opacity: 1; } 46% { opacity: .16; } 48% { opacity: 1; } 50% { opacity: .16; } 94% { opacity: 1; }
+}
+@keyframes cycle-yellow { 0% { opacity: .16; } 50% { opacity: 1; } 56% { opacity: .16; } 84% { opacity: 1; } 94% { opacity: .16; } }
+@keyframes cycle-red { 0% { opacity: .16; } 56% { opacity: 1; } 94% { opacity: .16; } }
+.light.blink .yellow { animation: blink 1.2s infinite step-end; opacity: 1; }
+@keyframes blink { 50% { opacity: .16; } }
+@media (prefers-reduced-motion: reduce) {
+  .light-cycle .lamp, .light.blink .lamp { animation: none; }
+  .light-cycle .red { opacity: 1; }
+}
+
+/* Hero */
+.hero { padding: 2.5rem 0 2rem; }
+.hero-grid { display: grid; gap: 2rem; align-items: center; }
+.hero h1 { font-size: clamp(2rem, 6vw, 3.1rem); line-height: 1.12; margin: .2rem 0 1rem; letter-spacing: -.01em; }
+.eyebrow { margin: 0; color: var(--muted); text-transform: uppercase; letter-spacing: .08em; font-size: .85rem; font-weight: 600; }
+.lead { font-size: 1.2rem; color: var(--muted); margin-top: 0; }
+.hero-light { margin: 0; display: grid; justify-items: center; gap: 1rem; text-align: center; }
+.hero-light figcaption { color: var(--muted); font-size: .9rem; max-width: 18rem; }
+@media (min-width: 48rem) {
+  .hero { padding: 4rem 0 3rem; }
+  .hero-grid { grid-template-columns: 1fr auto; gap: 4rem; }
+}
+.actions { display: flex; flex-wrap: wrap; gap: .75rem; margin: 1.5rem 0 0; }
+.button {
+  display: inline-block; padding: .7rem 1.2rem; border-radius: .7rem; border: 1px solid var(--line);
+  background: var(--card); color: var(--fg); text-decoration: none; font-weight: 600; min-height: 2.75rem;
+}
+.button.primary { background: var(--fg); color: var(--bg); border-color: var(--fg); }
+.button:hover { text-decoration: none; border-color: var(--fg); }
+
+/* Signal cards */
+.signals h2 { margin-top: 0; }
+.cards { list-style: none; padding: 0; margin: 0; display: grid; gap: .75rem; grid-template-columns: repeat(auto-fit, minmax(14rem, 1fr)); }
+.card { display: flex; gap: 1rem; align-items: center; background: var(--card); border: 1px solid var(--line); border-radius: var(--radius); padding: 1rem; }
+.card h3 { margin: 0; font-size: 1.05rem; }
+.card p { margin: .2rem 0 0; color: var(--muted); font-size: .95rem; }
+
+/* Text pages */
+/* Text column aligned with the header and the cards, readable line length. */
+.prose { padding-top: 1.5rem; padding-bottom: 3rem; }
+.prose > * { max-width: 46rem; }
+.prose h1 { font-size: clamp(1.8rem, 5vw, 2.4rem); line-height: 1.15; margin: 1rem 0; }
+.prose h2 { margin: 2.5rem 0 .75rem; font-size: 1.45rem; line-height: 1.25; }
+.prose h3 { margin: 1.75rem 0 .5rem; font-size: 1.15rem; }
+.prose li { margin: .3rem 0; }
+.prose blockquote { margin: 1.5rem 0; padding: .75rem 1rem; background: var(--card); border-left: 4px solid var(--yellow); border-radius: 0 .6rem .6rem 0; }
+.prose blockquote p { margin: .25rem 0; }
+.prose code { font-size: .92em; background: var(--card); border: 1px solid var(--line); border-radius: .3rem; padding: .05em .3em; overflow-wrap: anywhere; }
+.prose table { width: 100%; border-collapse: collapse; margin: 1rem 0; font-size: .97rem; display: block; overflow-x: auto; }
+.prose th, .prose td { text-align: left; vertical-align: top; padding: .5rem .75rem .5rem 0; border-bottom: 1px solid var(--line); }
+.prose th { font-weight: 600; }
+.prose hr { border: 0; border-top: 1px solid var(--line); margin: 2.5rem 0; }
+mark.todo { background: var(--yellow); color: #1b1d22; padding: 0 .25em; border-radius: .2rem; font-weight: 600; }
+.gallery { display: flex; flex-wrap: wrap; gap: 1rem; margin: 1.5rem 0; }
+.screenshot { margin: 0; flex: 1 1 13rem; max-width: 17rem; }
+.screenshot img { border: 1px solid var(--line); border-radius: .8rem; display: block; }
+.screenshot figcaption { color: var(--muted); font-size: .9rem; margin-top: .4rem; }
+.notfound { text-align: center; padding-top: 3rem; }
+.notfound .light { --size: 2rem; }
+
+/* Footer */
+.site-footer { border-top: 1px solid var(--line); background: var(--card); color: var(--muted); font-size: .92rem; padding: 1.5rem 0 2rem; margin-top: 2rem; }
+.site-footer p { margin: .4rem 0; }
+.footer-links { list-style: none; padding: 0; margin: 0 0 .75rem; display: flex; flex-wrap: wrap; gap: .25rem 1.25rem; }
+.site-footer a { color: inherit; }
+
+@media print {
+  .site-header nav, .languages, .hero-light, .actions { display: none; }
+}
