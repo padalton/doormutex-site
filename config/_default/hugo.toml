@@ -15,7 +15,7 @@ disableKinds = ["taxonomy", "term", "rss"]
   # production build (`--panicOnWarning`, see README) refuses to build.
   [params.legal]
     name = "Stefan Wölflinger"  # full name of the media owner
-    place = "Mödling, Austria" # place of residence (city / municipality, Austria)
+    place = "Mödling" # city / municipality only – the pages add the country
     email = "kontakt@doormutex.org" # contact address
 
 [languages]
