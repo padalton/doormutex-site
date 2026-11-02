@@ -1,0 +1,12 @@
+{{- /* Links to the same page in the other languages, or to their home page. */ -}}
+<ul class="languages" aria-label="{{ T "language" }}">
+  {{- $page := . }}
+  {{- range hugo.Sites }}
+  {{- if ne .Language.Lang site.Language.Lang }}
+  {{- $lang := .Language.Lang }}
+  {{- $target := .Home.RelPermalink }}
+  {{- range $page.Translations }}{{ if eq .Language.Lang $lang }}{{ $target = .RelPermalink }}{{ end }}{{ end }}
+  <li><a href="{{ $target }}" hreflang="{{ $lang }}" lang="{{ $lang }}">{{ .Language.Label }}</a></li>
+  {{- end }}
+  {{- end }}
+</ul>

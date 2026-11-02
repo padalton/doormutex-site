@@ -1,0 +1,38 @@
+disableHugoGeneratorInject = true
+baseURL = "https://doormutex.org/"
+title = "doormutex"
+defaultContentLanguage = "en"
+defaultContentLanguageInSubdir = false
+enableRobotsTXT = true
+disableKinds = ["taxonomy", "term", "rss"]
+
+[params]
+  repo = "https://github.com/padalton/doormutex"
+  siteRepo = "https://github.com/padalton/doormutex-site"
+
+  # Legal notice and privacy policy. Fill in before the site goes public –
+  # empty values render as a visible placeholder and log a warning, and the
+  # production build (`--panicOnWarning`, see README) refuses to build.
+  [params.legal]
+    name = ""  # full name of the media owner
+    place = "" # place of residence (city / municipality, Austria)
+    email = "" # contact address
+
+[languages]
+  [languages.en]
+    contentDir = "content/en"
+    label = "English"
+    weight = 1
+  [languages.de]
+    contentDir = "content/de"
+    label = "Deutsch"
+    weight = 2
+
+[markup.goldmark.renderer]
+  unsafe = false
+
+[markup.goldmark.parser.attribute]
+  block = true
+
+[minify.tdewolff.html]
+  keepWhitespace = false

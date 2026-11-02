@@ -1,0 +1,39 @@
+{{ define "main" }}
+<section class="hero">
+  <div class="wrap hero-grid">
+    <div>
+      <p class="eyebrow">{{ T "tagline" }}</p>
+      <h1>{{ .Params.headline }}</h1>
+      <p class="lead">{{ .Params.lead }}</p>
+      <p class="actions">
+        {{- range .Params.actions }}
+        <a class="button{{ if .primary }} primary{{ end }}" href="{{ if hasPrefix .url "http" }}{{ .url }}{{ else }}{{ .url | relLangURL }}{{ end }}">{{ .label }}</a>
+        {{- end }}
+      </p>
+    </div>
+    <figure class="hero-light">
+      {{ partial "light.html" (dict "state" "cycle" "class" "big") }}
+      <figcaption>{{ T "cycleCaption" }}</figcaption>
+    </figure>
+  </div>
+</section>
+
+<section class="wrap signals" aria-labelledby="signals">
+  <h2 id="signals">{{ T "signalsTitle" }}</h2>
+  <ul class="cards">
+    {{- range .Params.signals }}
+    <li class="card">
+      {{ partial "light.html" (dict "state" .light) }}
+      <div>
+        <h3>{{ .name }}</h3>
+        <p>{{ .text }}</p>
+      </div>
+    </li>
+    {{- end }}
+  </ul>
+</section>
+
+<div class="wrap prose">
+  {{ .Content }}
+</div>
+{{ end }}

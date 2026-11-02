@@ -1,0 +1,6 @@
+{{- /* {{< screenshot src="images/web-now.png" alt="…" caption="…" >}} */ -}}
+{{- $img := resources.Get (.Get "src") | fingerprint -}}
+<figure class="screenshot">
+  <img src="{{ $img.RelPermalink }}" width="{{ $img.Width }}" height="{{ $img.Height }}" alt="{{ .Get "alt" }}" loading="lazy" decoding="async">
+  {{- with .Get "caption" }}<figcaption>{{ . }}</figcaption>{{ end }}
+</figure>

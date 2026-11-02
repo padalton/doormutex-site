@@ -1,0 +1,5 @@
+{{- /* A small traffic light. Context: dict "state" (red|yellow|green|off|cycle) "class" (optional). */ -}}
+<span class="light light-{{ .state }}{{ with .class }} {{ . }}{{ end }}" aria-hidden="true">
+  <span class="lamp red"></span><span class="lamp yellow"></span><span class="lamp green"></span>
+</span>
+{{- /**/ -}}
