@@ -22,6 +22,12 @@ menus:
 
 ESP-IDF in C, gebaut für Akkubetrieb: Die LEDs laufen im Light Sleep weiter, und wenn niemand im Büro ist, schläft die Ampel tief und meldet sich alle paar Minuten. Flashen und WLAN-Einrichtung passieren im Browser (ESP Web Tools und Improv), Updates drahtlos mit automatischem Rollback. Für Aufbauten mit Netzteil gibt es ein ESPHome-Beispiel – bring deine eigene Lampe mit.
 
+## Steckbrett verdrahten
+
+Stufe 1 läuft über USB (LEDs, E-Ink, Lichtsensor), Stufe 2 mit einer 18650-Zelle (Schutzschaltung, Ladeelektronik, Akkuanzeige).
+
+{{< video src="/video/wiring.mp4" poster="/video/wiring.jpg" caption="Den Steckbrett-Prototyp in 13 Schritten verdrahten, ohne Ton (englisch). Pin-Tabellen und alle Schritte als Text: [docs/wiring.md](https://github.com/padalton/doormutex/blob/main/docs/wiring.md)." >}}
+
 ## Fahrplan
 
 1. **Steckbrett-Prototyp:** Firmware, LEDs und Linsentest, E-Ink, Strommessung, Akkubetrieb.

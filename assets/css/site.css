@@ -123,6 +123,9 @@ mark.todo { background: var(--yellow); color: #1b1d22; padding: 0 .25em; border-
 .screenshot { margin: 0; flex: 1 1 13rem; max-width: 17rem; }
 .screenshot img { border: 1px solid var(--line); border-radius: .8rem; display: block; }
 .screenshot figcaption { color: var(--muted); font-size: .9rem; margin-top: .4rem; }
+.video { margin: 1.5rem 0; }
+.video video { display: block; width: 100%; height: auto; border-radius: .8rem; background: #1b1d22; }
+.video figcaption { color: var(--muted); font-size: .9rem; margin-top: .4rem; }
 .notfound { text-align: center; padding-top: 3rem; }
 .notfound .light { --size: 2rem; }
 

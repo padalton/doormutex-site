@@ -22,6 +22,12 @@ menus:
 
 ESP-IDF in C, built for battery operation: the LEDs keep running in light sleep, and when nobody's in the office the light sleeps deeply and checks in every few minutes. Flashing and Wi-Fi setup happen in the browser (ESP Web Tools and Improv), updates over the air with automatic rollback. For builds on mains power there will be an ESPHome example – bring your own lamp.
 
+## Breadboard wiring
+
+Stage 1 runs on USB (LEDs, e-ink, light sensor), stage 2 on an 18650 cell (protection, charger, fuel gauge).
+
+{{< video src="/video/wiring.mp4" poster="/video/wiring.jpg" caption="Wiring the breadboard prototype in 13 steps, no sound. Pin tables and every step as text: [docs/wiring.md](https://github.com/padalton/doormutex/blob/main/docs/wiring.md)." >}}
+
 ## Roadmap
 
 1. **Breadboard prototype:** firmware, LEDs and lens test, e-ink, current measurement, battery operation.
