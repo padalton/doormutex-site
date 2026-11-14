@@ -7,7 +7,7 @@ menus:
     weight: 20
 ---
 
-> **In Entwicklung.** Das hier ist der Plan. Zuerst kommt ein Steckbrett-Prototyp aus fertigen Modulen, dann Platine und Gehäuse. Bis die Ampel fertig ist, kann eine smarte Lampe in Home Assistant einspringen.
+> **In Entwicklung.** Die erste Stufe des Steckbrett-Prototyps läuft: Die Ampel zeigt den Zustand vom Hub mit allen drei Lampen, das E-Ink-Schild und eine Helligkeit, die sich nach dem Raum richtet. Als Nächstes kommt der Akku, dann Platine und Gehäuse. Bis die Ampel fertig ist, kann eine smarte Lampe in Home Assistant einspringen.
 
 ## Der Plan
 
@@ -22,7 +22,9 @@ menus:
 
 ESP-IDF in C, gebaut für Akkubetrieb: Die LEDs laufen im Light Sleep weiter, und wenn niemand im Büro ist, schläft die Ampel tief und meldet sich alle paar Minuten. Flashen und WLAN-Einrichtung passieren im Browser (ESP Web Tools und Improv), Updates drahtlos mit automatischem Rollback. Für Aufbauten mit Netzteil gibt es ein ESPHome-Beispiel – bring deine eigene Lampe mit.
 
-## Steckbrett verdrahten
+## Steckbrett-Prototyp
+
+{{< screenshot src="images/breadboard-v1.jpg" alt="Der Steckbrett-Prototyp: ein ESP32-C6-Board, drei LEDs mit Transistoren, ein kleiner Lichtsensor und das 1,54-Zoll-E-Ink-Schild mit Working until 19:41" caption="Stufe 1 auf dem Steckbrett: Gelb für „arbeite“, und das E-Ink-Schild sagt, bis wann." >}}
 
 Stufe 1 läuft über USB (LEDs, E-Ink, Lichtsensor), Stufe 2 mit einer 18650-Zelle (Schutzschaltung, Ladeelektronik, Akkuanzeige).
 
@@ -30,7 +32,7 @@ Stufe 1 läuft über USB (LEDs, E-Ink, Lichtsensor), Stufe 2 mit einer 18650-Zel
 
 ## Fahrplan
 
-1. **Steckbrett-Prototyp:** Firmware, LEDs und Linsentest, E-Ink, Strommessung, Akkubetrieb.
+1. **Steckbrett-Prototyp:** Firmware, LEDs, E-Ink und Lichtsensor laufen (Stufe 1); als Nächstes Linsentest, Strommessung und Akkubetrieb.
 2. **Platine und Gehäuse v1.**
 3. **Feinschliff:** Akkulaufzeit, E-Ink-Layouts, Stream Deck, Web-Flasher, drahtlose Updates.
 4. **Release** – mit OSHWA-Zertifizierung.
