@@ -7,7 +7,7 @@ menus:
     weight: 20
 ---
 
-> **In development.** This is the plan. A breadboard prototype from ready-made modules comes first, then the circuit board and the enclosure. Until the light is ready, a smart lamp in Home Assistant can stand in for it.
+> **In development.** The first stage of the breadboard prototype runs: the light shows the hub's state with all three lamps, the e-ink sign and brightness that follows the room. Next come the battery, then the circuit board and the enclosure. Until the light is ready, a smart lamp in Home Assistant can stand in for it.
 
 ## The plan
 
@@ -22,7 +22,9 @@ menus:
 
 ESP-IDF in C, built for battery operation: the LEDs keep running in light sleep, and when nobody's in the office the light sleeps deeply and checks in every few minutes. Flashing and Wi-Fi setup happen in the browser (ESP Web Tools and Improv), updates over the air with automatic rollback. For builds on mains power there will be an ESPHome example – bring your own lamp.
 
-## Breadboard wiring
+## Breadboard prototype
+
+{{< screenshot src="images/breadboard-v1.jpg" alt="The breadboard prototype: an ESP32-C6 board, three LEDs with transistors, a small light sensor and the 1.54-inch e-ink sign showing Working until 19:41" caption="Stage 1 on the breadboard: yellow for working, and the e-ink sign says until when." >}}
 
 Stage 1 runs on USB (LEDs, e-ink, light sensor), stage 2 on an 18650 cell (protection, charger, fuel gauge).
 
@@ -30,7 +32,7 @@ Stage 1 runs on USB (LEDs, e-ink, light sensor), stage 2 on an 18650 cell (prote
 
 ## Roadmap
 
-1. **Breadboard prototype:** firmware, LEDs and lens test, e-ink, current measurement, battery operation.
+1. **Breadboard prototype:** firmware, LEDs, e-ink and light sensor run (stage 1); next the lens test, current measurement and battery operation.
 2. **Circuit board and enclosure v1.**
 3. **Polish:** battery life, e-ink layouts, Stream Deck, web flasher, updates over the air.
 4. **Release** – with OSHWA certification.
