@@ -1,7 +1,7 @@
 ---
 title: Funktionen
 slug: funktionen
-description: Was doormutex selbst erkennt, wie du es steuerst – KDE-Widget, Web-App, iPhone, Android, Home Assistant – und wie ein Hub mehrere Ampeln bedient.
+description: Was doormutex selbst erkennt, wie du es steuerst – KDE-Widget, Stream Deck, Web-App, iPhone, Android, Home Assistant – und wie ein Hub mehrere Ampeln bedient.
 lead: Meistens weiß doormutex selbst, ob du gestört werden darfst. Wenn nicht, reicht ein Tipp.
 menus:
   main:
@@ -22,11 +22,12 @@ menus:
 - **iPhone:** die Web-App plus Apple-Kurzbefehle – Siri, die Aktionstaste oder ein Fokus, der die Ampel schaltet. Keine App aus dem App Store nötig.
 - **Android:** die Web-App mit Kurzbefehlen am App-Symbol, die Open-Source-App *HTTP Shortcuts* für Homescreen-Widgets und Schnelleinstellungs-Kacheln, und Tasker oder MacroDroid, damit die Ampel dem „Bitte nicht stören“ des Handys folgt.
 - **Desktop-Benachrichtigungen** bei jeder Änderung, mit einem Knopf zurück auf Automatik.
-- **Stream Deck:** geplant.
+- **Stream Deck:** Lampen-Tasten, die mit der Ampel leuchten und sie schalten, Automatik, der Zustand mit „bis wann“ und ein Pomodoro. Ein Plugin für OpenDeck unter Linux und die Elgato-App unter Windows und macOS.
 
 {{< gallery >}}
 {{< screenshot src="images/web-now.png" alt="Die Web-App am Handy: Die Ampel zeigt Gelb, darunter Knöpfe für Rot, Gelb, Grün und Aus" caption="Web-App: der aktuelle Zustand und Schnellknöpfe (englische Oberfläche)." >}}
 {{< screenshot src="images/web-settings.png" alt="Die Einstellungen der Web-App: eine Farbe pro Terminart und das Timing der Warnphasen" caption="Einstellungen: Farbe pro Terminart, Timing der Warnphasen." >}}
+{{< screenshot src="images/streamdeck-keys.png" alt="Sechs Stream-Deck-Tasten: die rote Lampe leuchtet, Gelb und Grün sind dunkel; der Zustand „Do not disturb until 09:28“; eine Pomodoro-Tomate mit 24:22 Restzeit; eine kleine Ampel mit „Auto“" caption="Stream Deck in OpenDeck: die Lampen, der Zustand, ein Pomodoro und Automatik (englische Oberfläche)." >}}
 {{< /gallery >}}
 
 ## Manuelle Einstellungen enden von selbst

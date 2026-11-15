@@ -1,6 +1,6 @@
 ---
 title: Get started
-description: Run the doormutex hub, connect Google Calendar, install the Linux companion and the KDE widget, and set up the phones.
+description: Run the doormutex hub, connect Google Calendar, install the Linux companion, the KDE widget and the Stream Deck plugin, and set up the phones.
 lead: The software runs today; the light itself is still in development. This is what you need.
 menus:
   main:
@@ -11,7 +11,8 @@ menus:
 2. **Google Calendar** (optional). You create your own OAuth client in Google Cloud and sign in through the desktop companion – the browser opens on your desktop, nothing to copy. → [Google Calendar](https://github.com/padalton/doormutex/blob/main/docs/google-calendar.md)
 3. **The desktop companion** for Linux: microphone, camera, screen lock and notifications. → [Companion](https://github.com/padalton/doormutex/blob/main/companion/README.md)
 4. **The KDE Plasma widget.** In Plasma: *Add Widgets → Get New Widgets*, search for *doormutex* – or on the [KDE Store](https://store.kde.org/p/2380911). Setup: [Widget](https://github.com/padalton/doormutex/blob/main/plasmoid/README.md)
-5. **Phones.** → [iPhone and Apple Shortcuts](https://github.com/padalton/doormutex/blob/main/docs/apple-shortcuts.md) · [Android](https://github.com/padalton/doormutex/blob/main/docs/android.md)
-6. **A light.** Until the doormutex light is ready, use a smart lamp in Home Assistant: the hub announces itself via MQTT discovery.
+5. **Stream Deck** (optional). Install `doormutex-X.Y.Z.streamDeckPlugin` from the [latest release](https://github.com/padalton/doormutex/releases/latest) – in OpenDeck: *Plugins → Install from file*; in the Elgato app: double-click. → [Stream Deck plugin](https://github.com/padalton/doormutex/blob/main/streamdeck/README.md)
+6. **Phones.** → [iPhone and Apple Shortcuts](https://github.com/padalton/doormutex/blob/main/docs/apple-shortcuts.md) · [Android](https://github.com/padalton/doormutex/blob/main/docs/android.md)
+7. **A light.** Until the doormutex light is ready, use a smart lamp in Home Assistant: the hub announces itself via MQTT discovery.
 
 Questions, ideas, bugs: [GitHub issues](https://github.com/padalton/doormutex/issues).
