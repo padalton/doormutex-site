@@ -34,7 +34,7 @@ Stage 1 runs on USB (LEDs, e-ink, light sensor), stage 2 on an 18650 cell (prote
 
 1. **Breadboard prototype:** firmware, LEDs, e-ink and light sensor run (stage 1); next the lens test, current measurement and battery operation.
 2. **Circuit board and enclosure v1.**
-3. **Polish:** battery life, e-ink layouts, Stream Deck, web flasher, updates over the air.
+3. **Polish:** battery life, e-ink layouts, web flasher, updates over the air.
 4. **Release** – with OSHWA certification.
 
 The [breadboard parts list](https://github.com/padalton/doormutex/blob/main/docs/breadboard.md) and the full hardware notes are on GitHub.

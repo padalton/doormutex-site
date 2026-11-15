@@ -1,7 +1,7 @@
 ---
 title: Loslegen
 slug: loslegen
-description: Den doormutex-Hub betreiben, Google Kalender verbinden, den Linux-Companion und das KDE-Widget installieren und die Handys einrichten.
+description: Den doormutex-Hub betreiben, Google Kalender verbinden, den Linux-Companion, das KDE-Widget und das Stream-Deck-Plugin installieren und die Handys einrichten.
 lead: Die Software läuft bereits, die Ampel selbst ist noch in Entwicklung. Das brauchst du.
 menus:
   main:
@@ -12,7 +12,8 @@ menus:
 2. **Google Kalender** (optional). Du legst einen eigenen OAuth-Client in Google Cloud an und meldest dich über den Desktop-Companion an – der Browser öffnet sich am Desktop, nichts zu kopieren. → [Google Kalender](https://github.com/padalton/doormutex/blob/main/docs/google-calendar.md)
 3. **Den Desktop-Companion** für Linux: Mikrofon, Kamera, Bildschirmsperre und Benachrichtigungen. → [Companion](https://github.com/padalton/doormutex/blob/main/companion/README.md)
 4. **Das KDE-Plasma-Widget.** In Plasma: *Miniprogramme hinzufügen → Neue Miniprogramme holen*, nach *doormutex* suchen – oder im [KDE Store](https://store.kde.org/p/2380911). Einrichtung: [Widget](https://github.com/padalton/doormutex/blob/main/plasmoid/README.md)
-5. **Handys.** → [iPhone und Apple-Kurzbefehle](https://github.com/padalton/doormutex/blob/main/docs/apple-shortcuts.md) · [Android](https://github.com/padalton/doormutex/blob/main/docs/android.md)
-6. **Eine Ampel.** Bis die doormutex-Ampel fertig ist, nimm eine smarte Lampe in Home Assistant: Der Hub meldet sich über MQTT-Discovery an.
+5. **Stream Deck** (optional). `doormutex-X.Y.Z.streamDeckPlugin` aus dem [neuesten Release](https://github.com/padalton/doormutex/releases/latest) installieren – in OpenDeck: *Plugins → Install from file*; in der Elgato-App: Doppelklick. → [Stream-Deck-Plugin](https://github.com/padalton/doormutex/blob/main/streamdeck/README.md)
+6. **Handys.** → [iPhone und Apple-Kurzbefehle](https://github.com/padalton/doormutex/blob/main/docs/apple-shortcuts.md) · [Android](https://github.com/padalton/doormutex/blob/main/docs/android.md)
+7. **Eine Ampel.** Bis die doormutex-Ampel fertig ist, nimm eine smarte Lampe in Home Assistant: Der Hub meldet sich über MQTT-Discovery an.
 
 Die Anleitungen sind auf Englisch. Fragen, Ideen, Fehler: [GitHub Issues](https://github.com/padalton/doormutex/issues).

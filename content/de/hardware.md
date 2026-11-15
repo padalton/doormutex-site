@@ -34,7 +34,7 @@ Stufe 1 läuft über USB (LEDs, E-Ink, Lichtsensor), Stufe 2 mit einer 18650-Zel
 
 1. **Steckbrett-Prototyp:** Firmware, LEDs, E-Ink und Lichtsensor laufen (Stufe 1); als Nächstes Linsentest, Strommessung und Akkubetrieb.
 2. **Platine und Gehäuse v1.**
-3. **Feinschliff:** Akkulaufzeit, E-Ink-Layouts, Stream Deck, Web-Flasher, drahtlose Updates.
+3. **Feinschliff:** Akkulaufzeit, E-Ink-Layouts, Web-Flasher, drahtlose Updates.
 4. **Release** – mit OSHWA-Zertifizierung.
 
 Die [Teileliste für das Steckbrett](https://github.com/padalton/doormutex/blob/main/docs/breadboard.md) und alle Hardware-Notizen stehen auf GitHub (englisch).

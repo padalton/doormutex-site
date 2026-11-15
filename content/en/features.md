@@ -1,6 +1,6 @@
 ---
 title: Features
-description: What doormutex detects on its own, how you control it – KDE widget, web app, iPhone, Android, Home Assistant – and how one hub serves several lights.
+description: What doormutex detects on its own, how you control it – KDE widget, Stream Deck, web app, iPhone, Android, Home Assistant – and how one hub serves several lights.
 lead: doormutex knows most of the time on its own whether you can be disturbed. When it doesn't, a tap is enough.
 menus:
   main:
@@ -21,11 +21,12 @@ menus:
 - **iPhone:** the web app plus Apple Shortcuts – Siri, the Action Button, or a Focus mode that switches the light. No App Store app needed.
 - **Android:** the web app with shortcuts on its icon, the open-source app *HTTP Shortcuts* for home-screen widgets and Quick Settings tiles, and Tasker or MacroDroid to follow the phone's Do Not Disturb.
 - **Desktop notifications** on every change, with a button to go back to automatic.
-- **Stream Deck:** planned.
+- **Stream Deck:** lamp keys that light up with the light and switch it, automatic, the status with until when, and a pomodoro. One plugin for OpenDeck on Linux and the Elgato app on Windows and macOS.
 
 {{< gallery >}}
 {{< screenshot src="images/web-now.png" alt="The web app on a phone: the traffic light shows yellow, with buttons for red, yellow, green and off" caption="Web app: the current state and quick buttons." >}}
 {{< screenshot src="images/web-settings.png" alt="The web app's settings: a light per kind of calendar event and the warning timing" caption="Settings: a light per kind of event, warning timing." >}}
+{{< screenshot src="images/streamdeck-keys.png" alt="Six Stream Deck keys: the red lamp lit, yellow and green dark; the status &quot;Do not disturb until 09:28&quot;; a pomodoro tomato with 24:22 left; a small traffic light marked Auto" caption="Stream Deck in OpenDeck: the lamps, the status, a pomodoro and automatic." >}}
 {{< /gallery >}}
 
 ## Manual settings end by themselves
