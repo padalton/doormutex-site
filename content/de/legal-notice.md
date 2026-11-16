@@ -23,4 +23,4 @@ Die Inhalte dieser Website werden mit Sorgfalt erstellt, aber ohne Gewähr für 
 
 Sofern nicht anders angegeben, stehen Texte und Bilder dieser Website unter [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/deed.de), der Code der Website unter [Apache-2.0](https://www.apache.org/licenses/LICENSE-2.0). Der [Quellcode](https://github.com/padalton/doormutex-site) nennt die Lizenz jeder Datei.
 
-Siehe auch die [Datenschutzerklärung]({{< relref "privacy" >}}).
+Siehe auch die [Datenschutzerklärung]({{< relref "privacy" >}}) und die [Nutzungsbedingungen]({{< relref "terms" >}}).

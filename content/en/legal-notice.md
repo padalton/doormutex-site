@@ -22,4 +22,4 @@ The content of this website is written with care but without any guarantee of be
 
 Unless stated otherwise, texts and images on this website are licensed under [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/), and the website's code under [Apache-2.0](https://www.apache.org/licenses/LICENSE-2.0). The [source](https://github.com/padalton/doormutex-site) lists the licence of every file.
 
-See also the [privacy policy]({{< relref "privacy" >}}).
+See also the [privacy policy]({{< relref "privacy" >}}) and the [terms of service]({{< relref "terms" >}}).
