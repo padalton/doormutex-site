@@ -14,13 +14,21 @@ This policy has two parts: [this website](#website) and [the doormutex software'
 
 ### No cookies, no tracking
 
-This website sets no cookies, runs no JavaScript, contains no analytics or tracking code and loads nothing from other websites – no fonts, no videos, no social media buttons. There is nothing to consent to, so there is no cookie banner.
+This website sets no cookies, contains no analytics or tracking code and loads nothing from other websites – no fonts, no videos, no social media buttons. There is nothing to consent to, so there is no cookie banner. Only one page runs JavaScript – a small script from this website: the [Google sign-in relay](#relay).
 
 ### Hosting
 
 The website is hosted by Cloudflare, Inc., 101 Townsend St, San Francisco, CA 94107, USA (Cloudflare Pages), as our processor. To deliver the pages and to protect the website against attacks, Cloudflare processes the data your browser sends with every request: IP address, date and time, the requested address, the referring address (our pages ask your browser not to send it), browser and operating system. Legal basis is our legitimate interest in a secure and reliable website (Art. 6 (1) (f) GDPR). We don't keep these server logs ourselves; we only look at Cloudflare's aggregated, anonymous statistics (for example the number of page views per day), which can't identify anyone.
 
 Cloudflare is certified under the EU–U.S. Data Privacy Framework, so transfers to the USA are based on an adequacy decision of the European Commission (Art. 45 GDPR); in addition, a data processing agreement with standard contractual clauses applies. Details: [Cloudflare's privacy policy](https://www.cloudflare.com/privacypolicy/).
+
+### Google sign-in relay {#relay}
+
+The page `https://doormutex.org/oauth/` helps you connect a Google account to your own doormutex hub. Hubs usually run at a home address that Google can't send you back to, so Google sends the sign-in to this page, and its script hands it to your hub – in your browser.
+
+- **What it processes:** Google's answer arrives in the page address – a one-time authorization code and a random `state` value, or an error such as "access denied". Like every address you request, Cloudflare sees it as part of the request (see [Hosting](#hosting)). The page passes only the code, the state and an error to the hub address you confirmed. Apart from taking you to Google and on to your hub, the script sends nothing anywhere – in particular nothing to us.
+- **Why the code is of no use to others:** on its own the code gives no access. Exchanging it for access needs the PKCE verifier and the client secret that only your hub has; the code is also valid only once and only for a few minutes.
+- **What stays in your browser:** your hub's address and the pending sign-in (state, hub address, expiry after 10 minutes) are kept in this browser's local storage (`localStorage`), so the page can recognise your hub next time and match Google's answer to the sign-in you started. The pending sign-in is deleted as soon as Google's answer arrives; the hub address stays until you clear the site data for doormutex.org. Neither is ever sent to us. Storing them is strictly necessary for the relay you asked for, so no consent is needed (§ 165 (3) TKG 2021).
 
 ### Links to other websites
 
@@ -55,7 +63,7 @@ Nowhere. The data stays on your hub in your own network. The doormutex project o
 
 ### Storage and security
 
-The sign-in token from Google is stored on your hub, encrypted with AES-256-GCM. It never leaves the hub – not even during sign-in through the desktop companion. The connection to Google uses HTTPS.
+The sign-in token from Google is stored on your hub, encrypted with AES-256-GCM. It never leaves the hub – not even during sign-in through the desktop companion or the [sign-in relay](#relay), which only passes on the one-time code. The connection to Google uses HTTPS.
 
 ### Revoking access
 
@@ -70,4 +78,4 @@ doormutex's use and transfer of information received from Google APIs to any oth
 
 You have the right to access, rectification, erasure, restriction of processing, data portability and to object (Art. 15–21 GDPR). Write to the address above. You can also lodge a complaint with a supervisory authority – in Austria the [Datenschutzbehörde](https://www.dsb.gv.at/), Barichgasse 40–42, 1030 Vienna.
 
-*Last updated: 30 October 2026*
+*Last updated: 16 November 2026*

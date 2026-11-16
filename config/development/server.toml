@@ -1,8 +1,19 @@
 # The same security headers as static/_headers, so `hugo server` shows
 # CSP violations during development. Keep both in sync (CI compares them).
+# Hugo applies every matching rule in order, later values replace earlier
+# ones – so the /oauth/ exception comes last, like in static/_headers.
 [[headers]]
   for = "/**"
   [headers.values]
     Content-Security-Policy = "default-src 'self'; script-src 'none'; object-src 'none'; base-uri 'none'; form-action 'none'; frame-ancestors 'none'"
     Referrer-Policy = "no-referrer"
     X-Content-Type-Options = "nosniff"
+
+# Google sign-in relay – see the /oauth/* rule in static/_headers.
+[[headers]]
+  for = "/oauth/**"
+  [headers.values]
+    Content-Security-Policy = "default-src 'self'; script-src 'self'; connect-src 'none'; object-src 'none'; base-uri 'none'; form-action 'none'; frame-ancestors 'none'; require-trusted-types-for 'script'"
+    Referrer-Policy = "no-referrer"
+    X-Robots-Tag = "noindex"
+    Cache-Control = "no-store"

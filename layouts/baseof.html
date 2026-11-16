@@ -19,6 +19,7 @@
   <link rel="icon" href="{{ "icon.svg" | relURL }}" type="image/svg+xml">
   {{- $css := resources.Get "css/site.css" | minify | fingerprint }}
   <link rel="stylesheet" href="{{ $css.RelPermalink }}" integrity="{{ $css.Data.Integrity }}">
+  {{- block "head" . }}{{ end }}
 </head>
 <body>
   <a class="skip" href="#main">{{ T "skip" }}</a>
