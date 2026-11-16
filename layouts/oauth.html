@@ -1,0 +1,18 @@
+{{- /* Google sign-in relay (/oauth/): the only page with a script. Its texts
+       live in assets/js/oauth.js (English and German, by browser language);
+       the CSP for this page is the /oauth/* rule in static/_headers. */ -}}
+{{ define "head" }}
+  <meta name="robots" content="noindex">
+  {{- $js := resources.Get "js/oauth.js" | minify | fingerprint }}
+  <script src="{{ $js.RelPermalink }}" integrity="{{ $js.Data.Integrity }}" defer></script>
+{{ end }}
+{{ define "main" }}
+<article class="wrap prose relay">
+  <h1 id="relay-title">{{ .Title }}</h1>
+  <noscript>
+    <p class="relay-box relay-error">This page needs JavaScript: it hands a Google sign-in to your own doormutex hub, in your browser. Please allow JavaScript for doormutex.org and start again in your hub's web UI.</p>
+    <p class="relay-box relay-error" lang="de">Diese Seite braucht JavaScript: Sie übergibt eine Google-Anmeldung in deinem Browser an deinen eigenen doormutex-Hub. Bitte erlaube JavaScript für doormutex.org und starte die Anmeldung im Web-UI deines Hubs neu.</p>
+  </noscript>
+  <div id="relay" aria-live="polite"></div>
+</article>
+{{ end }}

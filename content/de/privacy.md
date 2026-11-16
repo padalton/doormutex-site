@@ -15,13 +15,21 @@ Diese Erklärung hat zwei Teile: [diese Website](#website) und [die Nutzung von 
 
 ### Keine Cookies, kein Tracking
 
-Diese Website setzt keine Cookies, führt kein JavaScript aus, enthält keinen Analyse- oder Tracking-Code und lädt nichts von anderen Websites – keine Schriften, keine Videos, keine Social-Media-Knöpfe. Es gibt nichts zuzustimmen, deshalb auch keinen Cookie-Banner.
+Diese Website setzt keine Cookies, enthält keinen Analyse- oder Tracking-Code und lädt nichts von anderen Websites – keine Schriften, keine Videos, keine Social-Media-Knöpfe. Es gibt nichts zuzustimmen, deshalb auch keinen Cookie-Banner. Nur eine Seite führt JavaScript aus – ein kleines Skript von dieser Website: die [Weiterleitung der Google-Anmeldung](#relay).
 
 ### Hosting
 
 Die Website wird von Cloudflare, Inc., 101 Townsend St, San Francisco, CA 94107, USA (Cloudflare Pages) als unserem Auftragsverarbeiter gehostet. Um die Seiten auszuliefern und die Website vor Angriffen zu schützen, verarbeitet Cloudflare die Daten, die dein Browser bei jedem Aufruf mitsendet: IP-Adresse, Datum und Uhrzeit, die aufgerufene Adresse, die verweisende Adresse (unsere Seiten bitten deinen Browser, sie nicht zu senden), Browser und Betriebssystem. Rechtsgrundlage ist unser berechtigtes Interesse an einer sicheren und zuverlässigen Website (Art. 6 Abs. 1 lit. f DSGVO). Wir speichern diese Server-Logs nicht selbst; wir sehen nur Cloudflares zusammengefasste, anonyme Statistiken (etwa die Zahl der Seitenaufrufe pro Tag), aus denen sich niemand identifizieren lässt.
 
 Cloudflare ist nach dem EU-US Data Privacy Framework zertifiziert; Übermittlungen in die USA beruhen daher auf einem Angemessenheitsbeschluss der Europäischen Kommission (Art. 45 DSGVO). Zusätzlich gilt ein Auftragsverarbeitungsvertrag mit Standardvertragsklauseln. Details: [Datenschutzerklärung von Cloudflare](https://www.cloudflare.com/de-de/privacypolicy/).
+
+### Weiterleitung der Google-Anmeldung {#relay}
+
+Die Seite `https://doormutex.org/oauth/` hilft dir, ein Google-Konto mit deinem eigenen doormutex-Hub zu verbinden. Hubs laufen meist unter einer Adresse im Heimnetz, zu der Google nicht zurückleiten kann. Deshalb schickt Google die Anmeldung an diese Seite, und ihr Skript übergibt sie an deinen Hub – in deinem Browser.
+
+- **Was verarbeitet wird:** Googles Antwort kommt in der Adresse der Seite an – ein einmaliger Autorisierungscode und ein zufälliger `state`-Wert, oder ein Fehler wie „Zugriff verweigert“. Wie jede aufgerufene Adresse sieht Cloudflare sie als Teil der Anfrage (siehe [Hosting](#hosting)). Die Seite gibt nur Code, State und einen Fehler an die Hub-Adresse weiter, die du bestätigt hast. Außer dich zu Google und weiter zu deinem Hub zu führen, sendet das Skript nichts – insbesondere nichts an uns.
+- **Warum der Code anderen nichts nützt:** Für sich allein gibt der Code keinen Zugriff. Um ihn gegen Zugriff einzutauschen, braucht es den PKCE-Verifier und das Client-Secret, die nur dein Hub hat; außerdem gilt der Code nur einmal und nur wenige Minuten.
+- **Was in deinem Browser bleibt:** die Adresse deines Hubs und die laufende Anmeldung (State, Hub-Adresse, Ablauf nach 10 Minuten) werden im lokalen Speicher dieses Browsers (`localStorage`) abgelegt, damit die Seite deinen Hub beim nächsten Mal wiedererkennt und Googles Antwort der Anmeldung zuordnen kann, die du gestartet hast. Die laufende Anmeldung wird gelöscht, sobald Googles Antwort ankommt; die Hub-Adresse bleibt, bis du die Website-Daten von doormutex.org löschst. Beides wird nie an uns gesendet. Das Speichern ist für die von dir gewünschte Weiterleitung unbedingt erforderlich, deshalb braucht es keine Einwilligung (§ 165 Abs. 3 TKG 2021).
 
 ### Links auf andere Websites
 
@@ -56,7 +64,7 @@ Nirgendwohin. Die Daten bleiben auf deinem Hub in deinem eigenen Netzwerk. Das d
 
 ### Speicherung und Sicherheit
 
-Das Anmeldetoken von Google wird auf deinem Hub gespeichert, verschlüsselt mit AES-256-GCM. Es verlässt den Hub nie – auch nicht bei der Anmeldung über den Desktop-Companion. Die Verbindung zu Google läuft über HTTPS.
+Das Anmeldetoken von Google wird auf deinem Hub gespeichert, verschlüsselt mit AES-256-GCM. Es verlässt den Hub nie – auch nicht bei der Anmeldung über den Desktop-Companion oder die [Weiterleitung der Anmeldung](#relay), die nur den einmaligen Code übergibt. Die Verbindung zu Google läuft über HTTPS.
 
 ### Zugriff widerrufen
 
@@ -73,4 +81,4 @@ Auf Deutsch: Die Nutzung und Weitergabe von Informationen, die doormutex von Goo
 
 Du hast das Recht auf Auskunft, Berichtigung, Löschung, Einschränkung der Verarbeitung, Datenübertragbarkeit und Widerspruch (Art. 15–21 DSGVO). Schreib dazu an die oben genannte Adresse. Außerdem kannst du dich bei einer Aufsichtsbehörde beschweren – in Österreich bei der [Datenschutzbehörde](https://www.dsb.gv.at/), Barichgasse 40–42, 1030 Wien.
 
-*Stand: 30. Oktober 2026*
+*Stand: 16. November 2026*

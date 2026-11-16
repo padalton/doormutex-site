@@ -1,5 +1,6 @@
 # Cloudflare Pages response headers – https://developers.cloudflare.com/pages/configuration/headers/
-# The site loads nothing from other origins and runs no JavaScript.
+# The site loads nothing from other origins and runs no JavaScript – except
+# the Google sign-in relay at /oauth/ (last rule).
 /*
   Content-Security-Policy: default-src 'self'; script-src 'none'; object-src 'none'; base-uri 'none'; form-action 'none'; frame-ancestors 'none'; upgrade-insecure-requests
   Strict-Transport-Security: max-age=31536000; includeSubDomains
@@ -15,7 +16,25 @@
   Cache-Control: public, max-age=31536000, immutable
 /images/*
   Cache-Control: public, max-age=31536000, immutable
+/js/*
+  Cache-Control: public, max-age=31536000, immutable
 
 # Preview deployments stay out of search engines.
 https://:project.pages.dev/*
   X-Robots-Tag: noindex
+
+# Google sign-in relay: the only page with a script – one same-origin file
+# with SRI, no inline code, no requests (connect-src 'none'). Cloudflare joins
+# the headers of all matching rules, and two CSPs would both be enforced, so
+# every header set here is detached first ("!" only removes what earlier rules
+# added – keep this rule last). No upgrade-insecure-requests: the page hands
+# over to hubs on plain http in the home network.
+/oauth/*
+  ! Content-Security-Policy
+  Content-Security-Policy: default-src 'self'; script-src 'self'; connect-src 'none'; object-src 'none'; base-uri 'none'; form-action 'none'; frame-ancestors 'none'; require-trusted-types-for 'script'
+  ! Referrer-Policy
+  Referrer-Policy: no-referrer
+  ! X-Robots-Tag
+  X-Robots-Tag: noindex
+  ! Cache-Control
+  Cache-Control: no-store

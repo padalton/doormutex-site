@@ -37,6 +37,8 @@ jobs:
         run: hugo --gc --minify
       - name: Check (no external assets, no inline code, links)
         run: python3 scripts/check_site.py public
+      - name: Test the sign-in relay script
+        run: node --test tests/oauth.test.mjs
       - name: Legal placeholders
         # Warn only: the production build on Cloudflare uses --panicOnWarning
         # and refuses to publish while params.legal is empty.

@@ -27,4 +27,4 @@ English comes first, German is included. Adding your language takes JSON files f
 
 ## This website
 
-The [source of this website](https://github.com/padalton/doormutex-site) is open too: code under Apache-2.0, texts and images under CC BY-SA 4.0. The traffic-light icon and the screenshots come from the doormutex project. The site is static, runs no JavaScript, sets no cookies and loads nothing from other websites.
+The [source of this website](https://github.com/padalton/doormutex-site) is open too: code under Apache-2.0, texts and images under CC BY-SA 4.0. The traffic-light icon and the screenshots come from the doormutex project. The site is static, sets no cookies and loads nothing from other websites. It runs no JavaScript – except on the page that relays a Google sign-in to your own hub, with a small script from this website.

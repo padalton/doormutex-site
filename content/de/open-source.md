@@ -27,4 +27,4 @@ Englisch zuerst, Deutsch ist dabei. Für deine Sprache brauchst du JSON-Dateien 
 
 ## Diese Website
 
-Auch der [Quellcode dieser Website](https://github.com/padalton/doormutex-site) ist offen: Code unter Apache-2.0, Texte und Bilder unter CC BY-SA 4.0. Das Ampel-Symbol und die Screenshots stammen aus dem doormutex-Projekt. Die Seite ist statisch, führt kein JavaScript aus, setzt keine Cookies und lädt nichts von anderen Websites.
+Auch der [Quellcode dieser Website](https://github.com/padalton/doormutex-site) ist offen: Code unter Apache-2.0, Texte und Bilder unter CC BY-SA 4.0. Das Ampel-Symbol und die Screenshots stammen aus dem doormutex-Projekt. Die Seite ist statisch, setzt keine Cookies und lädt nichts von anderen Websites. Sie führt kein JavaScript aus – außer auf der Seite, die eine Google-Anmeldung an deinen eigenen Hub weiterleitet, mit einem kleinen Skript von dieser Website.
