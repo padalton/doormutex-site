@@ -44,6 +44,21 @@ hugo --gc --minify && python3 scripts/check_site.py
 2. Read the [legal notice](content/en/legal-notice.md) and the [privacy policy](content/en/privacy.md) (German: [Impressum](content/de/legal-notice.md), [Datenschutzerklärung](content/de/privacy.md)). **They are a starting point written without legal advice** – review them before publishing. They assume a non-commercial site of a private person in Austria (§ 25 MedienG). If the site ever sells something (kits, devices), the E-Commerce Act (§ 5 ECG) and more apply.
 3. The privacy policy has a section on the software's use of Google user data with the Limited Use statement, as Google asks for when verifying the OAuth client. Its URL: `https://doormutex.org/privacy/#google`. If the software's Google access changes (scope, fields), update it.
 
+4. The [terms of service](content/en/terms.md) ([Nutzungsbedingungen](content/de/terms.md)) – also written without legal advice – cover the website and the self-hosted software. Google needs them, together with the privacy policy, to publish the OAuth client.
+
+## Google OAuth branding
+
+To publish the OAuth client (*Google Auth Platform*), so that refresh tokens no longer expire after 7 days:
+
+| Field (*Branding*) | Value |
+|---|---|
+| App home page | `https://doormutex.org/` |
+| Privacy policy | `https://doormutex.org/privacy/` |
+| Terms of service | `https://doormutex.org/terms/` |
+| Authorized domain | `doormutex.org` |
+
+The domain must be verified in [Google Search Console](https://search.google.com/search-console) (property type *Domain*, TXT record in the Cloudflare zone) with the same Google account that owns the Cloud project. Then *Audience → Publish app*.
+
 ## Deploy: Cloudflare Pages
 
 Cloudflare Pages with its Git integration: Cloudflare builds every push itself, so **no secrets are needed in GitHub**, pull requests get preview deployments, and the `_headers` file is supported directly. (Workers static assets would work too, but need a `wrangler` config and gain nothing for a static site.)
