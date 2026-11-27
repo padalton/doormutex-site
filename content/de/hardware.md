@@ -28,7 +28,11 @@ ESP-IDF in C, gebaut für Akkubetrieb: Die LEDs laufen im Light Sleep weiter, un
 
 Stufe 1 läuft über USB (LEDs, E-Ink, Lichtsensor), Stufe 2 mit einer 18650-Zelle (Schutzschaltung, Ladeelektronik, Akkuanzeige).
 
-{{< video src="/video/wiring.mp4" poster="/video/wiring.jpg" caption="Den Steckbrett-Prototyp in 13 Schritten verdrahten, ohne Ton (englisch). Pin-Tabellen und alle Schritte als Text: [docs/wiring.md](https://github.com/padalton/doormutex/blob/main/docs/wiring.md)." >}}
+{{< video src="/video/wiring.mp4" poster="/video/wiring.jpg" caption="Den Steckbrett-Prototyp in 13 Schritten verdrahten, ohne Ton (englisch). Stufe 2 mit den Standardteilen, einem TP4056-Modul und einem TPS63020 – samt Umlöten der Lötbrücke von 4,2 V auf 3,3 V. Pin-Tabellen und alle Schritte als Text: [docs/wiring.md](https://github.com/padalton/doormutex/blob/main/docs/wiring.md)." >}}
+
+Mit den alternativen Teilen für Stufe 2 bleibt die Verdrahtung gleich, nur die Platinen sehen anders aus:
+
+{{< video src="/video/wiring-pololu.mp4" poster="/video/wiring-pololu.jpg" caption="Dieselben 13 Schritte mit einer einfachen Schutzplatine und dem Pololu S7V8F3 (fest auf 3,3 V, ohne Lötbrücke), ohne Ton (englisch)." >}}
 
 ## Fahrplan
 

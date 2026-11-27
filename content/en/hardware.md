@@ -28,7 +28,11 @@ ESP-IDF in C, built for battery operation: the LEDs keep running in light sleep,
 
 Stage 1 runs on USB (LEDs, e-ink, light sensor), stage 2 on an 18650 cell (protection, charger, fuel gauge).
 
-{{< video src="/video/wiring.mp4" poster="/video/wiring.jpg" caption="Wiring the breadboard prototype in 13 steps, no sound. Pin tables and every step as text: [docs/wiring.md](https://github.com/padalton/doormutex/blob/main/docs/wiring.md)." >}}
+{{< video src="/video/wiring.mp4" poster="/video/wiring.jpg" caption="Wiring the breadboard prototype in 13 steps, no sound. Stage 2 with the default parts, a TP4056 module and a TPS63020 – including how to move its solder jumper from 4.2 V to 3.3 V. Pin tables and every step as text: [docs/wiring.md](https://github.com/padalton/doormutex/blob/main/docs/wiring.md)." >}}
+
+With the alternative parts for stage 2 the wiring stays the same, only the boards look different:
+
+{{< video src="/video/wiring-pololu.mp4" poster="/video/wiring-pololu.jpg" caption="The same 13 steps with a bare protection board and the Pololu S7V8F3 (fixed at 3.3 V, no jumper), no sound." >}}
 
 ## Roadmap
 
